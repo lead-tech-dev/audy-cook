@@ -51,22 +51,28 @@ export class BlogController {
     const url = esc(articleUrl);
 
     const html = `<!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="utf-8" />
   <title>${title} – AUDY COOK</title>
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="AUDY COOK" />
+  <meta property="og:locale" content="fr_FR" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
   <meta property="og:image" content="${image}" />
+  <meta property="og:image:secure_url" content="${image}" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="${title}" />
   <meta property="og:url" content="${url}" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@audycook" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />
   <meta name="twitter:image" content="${image}" />
+  <meta name="description" content="${description}" />
   <meta http-equiv="refresh" content="0;url=${url}" />
   <script>window.location.replace("${url}");</script>
 </head>
