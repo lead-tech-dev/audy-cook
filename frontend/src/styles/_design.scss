@@ -62,17 +62,21 @@ $bp-xl: 1280px;
 @mixin display-xl {
   font-family: $font-display;
   font-weight: 500;
-  line-height: 0.95;
+  line-height: 1.05;
   letter-spacing: -0.02em;
-  font-size: clamp(2.75rem, 6vw, 5rem);
+  font-size: clamp(1.9rem, 6vw, 5rem);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 @mixin display-lg {
   font-family: $font-display;
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.01em;
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(1.5rem, 4vw, 3.25rem);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 @mixin button-primary {
