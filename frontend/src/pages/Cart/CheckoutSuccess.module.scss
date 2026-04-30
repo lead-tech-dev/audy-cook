@@ -1,0 +1,120 @@
+@use "@/styles/design" as *;
+
+.page {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  background: $color-bg-soft;
+  padding: 6rem 1.5rem;
+}
+.inner {
+  text-align: center;
+  max-width: 520px;
+  h1 {
+    @include display-lg;
+    margin: 1.5rem 0 1rem;
+    color: $color-ink;
+    font-style: italic;
+  }
+  p {
+    color: $color-ink-soft;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: $color-moss;
+  color: $color-bg;
+  font-size: 2.5rem;
+}
+.iconFail {
+  display: inline-grid;
+  place-items: center;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: $color-spice;
+  color: $color-bg;
+  font-size: 2.5rem;
+}
+.spinner {
+  width: 40px; height: 40px;
+  border: 2px solid $color-border-strong;
+  border-top-color: $color-spice;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.btn { @include button-primary; }
+
+.refBox {
+  margin: 2rem auto 2rem;
+  padding: 2rem 1.75rem;
+  border: 1px dashed $color-spice;
+  background: $color-cream;
+  text-align: left;
+  max-width: 460px;
+}
+.refOverline {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-spice;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.refCode {
+  font-family: $font-display;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: 0.04em;
+  color: $color-ink;
+  font-weight: 600;
+  word-break: break-all;
+  margin-bottom: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  background: $color-bg;
+  border: 1px solid $color-border-strong;
+  text-align: center;
+}
+.refBody {
+  font-size: 0.9rem !important;
+  color: $color-ink-soft !important;
+  line-height: 1.5 !important;
+  margin: 0 0 1.25rem !important;
+}
+.refActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.refCopy {
+  background: $color-ink;
+  color: $color-bg;
+  border: none;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  &:hover { background: $color-spice; }
+}
+.refShare {
+  display: inline-flex;
+  align-items: center;
+  background: #25d366;
+  color: #fff;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  text-decoration: none;
+  &:hover { background: #1eb957; }
+}

@@ -1,0 +1,89 @@
+{
+  "theme": "light",
+  "archetype": "Organic & Earthy",
+  "mood": "Warm, authentic, premium, sensory, rooted in Cameroonian terroir",
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "body_font": "Outfit",
+    "scale": {
+      "h1": "text-5xl md:text-6xl tracking-tighter leading-none font-semibold text-[#1F1A17]",
+      "h2": "text-3xl md:text-4xl tracking-tight leading-tight font-medium text-[#1F1A17]",
+      "h3": "text-2xl md:text-3xl tracking-tight font-medium text-[#4A423D]",
+      "body": "text-base md:text-lg leading-relaxed text-[#4A423D] font-light",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-[#A64036]"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#FAF8F5",
+      "secondary": "#F0EBE1",
+      "tertiary": "#E6DED0"
+    },
+    "text": {
+      "primary": "#1F1A17",
+      "secondary": "#4A423D",
+      "muted": "#7A6F68"
+    },
+    "brand": {
+      "primary": "#A64036",
+      "primary_hover": "#8C352D",
+      "secondary": "#2C4A3B",
+      "secondary_hover": "#223A2E",
+      "accent": "#D99C3D"
+    },
+    "border": {
+      "subtle": "rgba(31, 26, 23, 0.08)",
+      "medium": "rgba(31, 26, 23, 0.15)"
+    }
+  },
+  "spacing_and_layout": {
+    "general": "Generous spacing philosophy. Use p-8, p-12, py-24 for sections to create breathing room.",
+    "grid_mode": "Bento Grid Mode A (Tetris Grid) for marketing/home sections to create asymmetry. Grid items must be direct children.",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "border_radius": "rounded-none or small radius (rounded-sm). Absolutely no pill-shaped containers to maintain an editorial and premium restaurant feel."
+  },
+  "surface_strategies": {
+    "cards": "Flat background (primary or secondary), 1px subtle border, no shadow by default. Hover: slight lift (-translate-y-1) and soft shadow.",
+    "header": "Crystal Glass style if sticky: bg-[#FAF8F5]/80 backdrop-blur-xl border-b border-black/5. Must not use fully transparent.",
+    "footer": "Contrast shift: Dark background (Cacao #1F1A17) with Sand (#FAF8F5) text. Massive padding py-24. High-contrast large brand typography."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#A64036] text-white rounded-none px-8 py-4 font-medium hover:bg-[#8C352D] transition-colors",
+      "secondary": "bg-transparent border border-[#1F1A17] text-[#1F1A17] rounded-none px-8 py-4 font-medium hover:bg-[#1F1A17] hover:text-white transition-colors"
+    },
+    "badges": "Small, uppercase, tracking-widest, bg-[#D99C3D] text-[#1F1A17] px-3 py-1 text-[10px] font-bold",
+    "product_card": "Image takes 70% of height, object-cover. Content is left-aligned with optical alignment. Title in Cormorant Garamond, price in Outfit. Action button minimal and elegant.",
+    "forms": "Use Shadcn components but override borders to be 1px solid rgba(31,26,23,0.15) and rounded-none. Focus states must ring with brand primary color."
+  },
+  "media": {
+    "hero_traditional_meal": "https://static.prod-images.emergentagent.com/jobs/7706c894-0530-43fe-9cd2-c8b62dc972ce/images/1bbc185000a873c1711bef67ab8e0d107fbf1b6b93af3585d3c0050e87d5eb15.png",
+    "spices_texture_bg": "https://static.prod-images.emergentagent.com/jobs/7706c894-0530-43fe-9cd2-c8b62dc972ce/images/e9d7698b67e82b700555f128ad1fabd4bc86c958c69a410e5cba16a785ffb4ee.png",
+    "catering_buffet": "https://static.prod-images.emergentagent.com/jobs/7706c894-0530-43fe-9cd2-c8b62dc972ce/images/8e924b236ef1d8d7a8930b058f40c9119f3c18c5e20868c581c0785aa885b0c2.png",
+    "product_maize_flour": "https://static.prod-images.emergentagent.com/jobs/7706c894-0530-43fe-9cd2-c8b62dc972ce/images/452cd602ae4139ceec478a49a1284b33f3cb2ef0d48b6748a0caecfc0e0b3586.png",
+    "rustic_spices_unsplash": "https://images.unsplash.com/photo-1608237052409-00bed2436ddc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw0fHxydXN0aWMlMjBjb29raW5nJTIwc3BpY2VzfGVufDB8fHx8MTc3NzI5NjQyNHww&ixlib=rb-4.1.0&q=85",
+    "rustic_spices_unsplash_2": "https://images.unsplash.com/photo-1604740795234-9cb8e03c189b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHxydXN0aWMlMjBjb29raW5nJTIwc3BpY2VzfGVufDB8fHx8MTc3NzI5NjQyNHww&ixlib=rb-4.1.0&q=85",
+    "elegant_catering_unsplash": "https://images.unsplash.com/photo-1751651054945-882d49cbdbfc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHxlbGVnYW50JTIwY2F0ZXJpbmclMjBmb29kfGVufDB8fHx8MTc3NzI5NjQyNHww&ixlib=rb-4.1.0&q=85",
+    "elegant_catering_pexels": "https://images.pexels.com/photos/34890767/pexels-photo-34890767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Light stroke (1.5px), earthy tones. Strictly for utility like shopping cart, user, menu, search. Do not over-use decorative icons."
+  },
+  "motion_and_interactions": {
+    "hover_states": "Images slightly scale up (scale-105) inside hidden overflow. Links have subtle underline animations. Focus states must be distinct.",
+    "scroll": "Lenis smooth scrolling is mandatory for the premium momentum feel. Very subtle parallax on the spices background image.",
+    "accessibility": "Respect prefers-reduced-motion. Ensure all motion conveys meaning or doesn't distract."
+  },
+  "specific_page_instructions": {
+    "home_page": "Hero: Split layout or 16:9 large media block using 'hero_traditional_meal' without a heavy blanket overlay. Marquee: Slow, organic 'Editorial Ribbon' with Serif font reading 'Authentique • Camerounais • Gastronomique' in text-[#1F1A17] on bg-[#FAF8F5].",
+    "product_catalog": "Clean bento grids for terroir products (Farine, Eru, Koki). Use 'product_maize_flour' as structural inspiration. Left-aligned typography. Include 'Add to cart' and bold WhatsApp buttons.",
+    "catering_service": "Use 'catering_buffet' and 'elegant_catering_unsplash'. Adopt a darker background for this section (Moss #2C4A3B) to provide high-end, dramatic contrast to the rest of the light theme.",
+    "cart_checkout": "Slide-out cart via Shadcn Sheet. Minimalist design. Emphasize totals, Stripe CTA, and 'Order via WhatsApp' as equal paths.",
+    "blog": "Heavy editorial focus. Huge headlines in Cormorant Garamond, wide leading for body text, generous left margins."
+  },
+  "tech_stack_overrides": {
+    "ui_library": "Shadcn UI required but must remove standard rounded styles and replace with rounded-none or rounded-sm. No default Vercel-like blue focuses.",
+    "testing_attributes": "All interactive elements MUST include data-testid. E.g., data-testid='add-to-cart-button', data-testid='whatsapp-contact-link', data-testid='language-switcher'."
+  }
+}

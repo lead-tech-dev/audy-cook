@@ -1,0 +1,122 @@
+@use "@/styles/design" as *;
+
+.footer {
+  background: $color-bg-deep;
+  color: $color-bg;
+  margin-top: 6rem;
+  padding-top: 6rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $color-ochre, transparent);
+    opacity: 0.3;
+  }
+}
+
+.inner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.col {
+  h4 {
+    font-family: $font-body;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-ochre;
+    margin: 0 0 1.5rem;
+  }
+  a, p {
+    display: block;
+    color: rgba($color-bg, 0.78);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin: 0 0 0.6rem;
+    transition: color 200ms ease;
+  }
+  a:hover {
+    color: $color-bg;
+  }
+  p {
+    margin-bottom: 0.4rem;
+  }
+}
+
+.brandImg {
+  width: clamp(200px, 24vw, 260px);
+  height: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+  margin-left: -0.75rem; // align with rest of footer column
+}
+
+.tagline {
+  font-family: $font-display;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba($color-bg, 0.7);
+  max-width: 320px;
+  margin-bottom: 1.5rem !important;
+}
+
+.expansion {
+  font-size: 0.78rem !important;
+  letter-spacing: 0.08em;
+  color: rgba($color-bg, 0.45) !important;
+  text-transform: uppercase;
+}
+
+.bigPhone {
+  font-family: $font-display;
+  font-size: 1.6rem !important;
+  color: $color-bg !important;
+  font-weight: 500;
+  margin-bottom: 0.3rem !important;
+  letter-spacing: -0.01em;
+}
+
+.muted {
+  font-size: 0.82rem !important;
+  color: rgba($color-bg, 0.5) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.adminLink {
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba($color-bg, 0.4) !important;
+  &:hover {
+    color: $color-ochre !important;
+  }
+}
+
+.bottom {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid rgba($color-bg, 0.1);
+  font-size: 0.8rem;
+  color: rgba($color-bg, 0.45);
+  letter-spacing: 0.04em;
+}

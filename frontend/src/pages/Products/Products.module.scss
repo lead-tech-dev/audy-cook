@@ -1,0 +1,74 @@
+@use "@/styles/design" as *;
+
+.page { background: $color-bg; }
+
+.head {
+  border-bottom: 1px solid $color-border;
+  padding: 4rem 0 5rem;
+  background: $color-bg-soft;
+}
+.headInner {
+  @include container;
+  max-width: 880px;
+}
+.title {
+  @include display-xl;
+  margin: 1rem 0 1.5rem;
+  color: $color-ink;
+}
+.sub {
+  font-size: 1.1rem;
+  color: $color-ink-soft;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.list {
+  @include container;
+  padding: 4rem 0 6rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid $color-border;
+  padding-bottom: 1rem;
+}
+.filterBtn {
+  background: none;
+  border: 1px solid $color-border;
+  font-family: $font-body;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  color: $color-ink-muted;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  transition: all 220ms ease;
+  &:hover {
+    color: $color-ink;
+    border-color: $color-border-strong;
+  }
+}
+.filterActive {
+  background: $color-ink !important;
+  color: $color-bg !important;
+  border-color: $color-ink !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  @media (min-width: $bp-md) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: $bp-lg) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.empty {
+  color: $color-ink-muted;
+  text-align: center;
+  padding: 4rem 0;
+}

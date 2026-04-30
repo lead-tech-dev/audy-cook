@@ -1,0 +1,306 @@
+@use "@/styles/design" as *;
+
+.page { background: $color-bg; }
+
+.head {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid $color-border;
+  background: $color-bg-soft;
+}
+.headInner {
+  @include container;
+  h1 {
+    @include display-lg;
+    margin: 0.75rem 0 0;
+  }
+}
+
+.body {
+  @include container;
+  padding: 4rem 0 6rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem 0;
+  p {
+    font-family: $font-display;
+    font-size: 2rem;
+    color: $color-ink;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+}
+
+.btnGhost { @include button-ghost; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  @media (min-width: $bp-lg) {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid $color-border;
+}
+.item {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid $color-border;
+  align-items: flex-start;
+  img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+  }
+}
+.itemInfo {
+  h3 {
+    font-family: $font-display;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 0 0.25rem;
+  }
+  p {
+    color: $color-ink-muted;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.75rem;
+  }
+}
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $color-border-strong;
+  button {
+    width: 32px; height: 32px;
+    background: none; border: none;
+    cursor: pointer; color: $color-ink;
+    font-size: 1rem;
+    &:hover { background: $color-bg-warm; }
+  }
+  span { width: 36px; text-align: center; }
+}
+.itemRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+  strong {
+    font-family: $font-display;
+    font-size: 1.4rem;
+    color: $color-spice;
+    font-weight: 600;
+  }
+}
+.removeBtn {
+  background: none;
+  border: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  &:hover { color: $color-spice; }
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  margin-top: 1.5rem;
+  color: $color-ink-muted;
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  &:hover { color: $color-spice; }
+}
+
+.summary {
+  background: $color-bg-soft;
+  padding: 2rem 1.75rem;
+  border: 1px solid $color-border;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  h3 {
+    font-family: $font-display;
+    font-size: 1.6rem;
+    margin: 0 0 1.5rem;
+  }
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid $color-border;
+}
+.totalRow {
+  font-family: $font-display;
+  font-size: 1.5rem;
+  border-bottom: none;
+  border-top: 1px solid $color-border-strong;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  span:last-child { color: $color-spice; font-weight: 600; }
+}
+.discountRow {
+  color: $color-moss;
+  font-weight: 500;
+  span:last-child { color: $color-moss; font-weight: 600; }
+}
+.refBlock {
+  margin: 0 0 1rem;
+  padding: 0.85rem 0.9rem 1rem;
+  background: $color-bg;
+  border: 1px dashed $color-border-strong;
+}
+.refLabel {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.refRow {
+  display: flex;
+  gap: 0.4rem;
+}
+.refInput {
+  flex: 1;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid $color-border-strong;
+  background: $color-bg;
+  font-family: $font-mono, $font-body;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  color: $color-ink;
+  &:focus {
+    outline: none;
+    border-color: $color-spice;
+  }
+}
+.refBtn {
+  background: $color-ink;
+  color: $color-bg;
+  border: none;
+  padding: 0 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  &:hover:not(:disabled) { background: $color-spice; }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+}
+.refOk {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: $color-moss;
+  font-weight: 500;
+}
+.refKo {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: $color-spice;
+  font-weight: 500;
+}
+.note {
+  font-size: 0.82rem;
+  color: $color-ink-muted;
+  margin: 0.5rem 0 1.5rem;
+}
+.input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid $color-border-strong;
+  background: $color-bg;
+  font-family: $font-body;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  border-radius: $radius-sm;
+  color: $color-ink;
+  &:focus {
+    outline: none;
+    border-color: $color-spice;
+  }
+}
+.error {
+  background: rgba($color-spice, 0.08);
+  border: 1px solid $color-spice;
+  color: $color-spice;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 1rem;
+}
+.btnPrimary {
+  @include button-primary;
+  width: 100%;
+  margin-bottom: 0.65rem;
+}
+.btnWhatsapp {
+  @include button-whatsapp;
+  width: 100%;
+}
+
+.shippingBlock {
+  border: 1px solid rgba(44, 74, 59, 0.25);
+  background: rgba(44, 74, 59, 0.04);
+  border-radius: $radius-sm;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.shippingHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.shippingLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $color-moss;
+}
+
+.shippingChange {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+  text-decoration: none;
+  transition: color 200ms;
+
+  &:hover { color: $color-spice; }
+}
+
+.shippingAddress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.85rem;
+  color: $color-ink-soft;
+
+  strong {
+    color: $color-ink;
+    font-weight: 600;
+  }
+}

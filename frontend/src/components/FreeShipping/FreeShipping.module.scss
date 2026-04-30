@@ -1,0 +1,45 @@
+@use "@/styles/design" as *;
+
+.wrap {
+  background: linear-gradient(135deg, $color-bg-soft 0%, $color-cream 100%);
+  border: 1px solid $color-border;
+  padding: 1rem 1.1rem 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.65rem;
+}
+.icon {
+  color: $color-ochre;
+  font-size: 1.05rem;
+}
+.msg, .msgWin {
+  margin: 0;
+  font-size: 0.88rem;
+  color: $color-ink;
+  line-height: 1.4;
+  font-family: $font-body;
+  strong { color: $color-spice; font-weight: 600; }
+}
+.msgWin {
+  color: $color-moss;
+  font-weight: 500;
+}
+.bar {
+  position: relative;
+  height: 4px;
+  background: $color-border;
+  overflow: hidden;
+}
+.fill, .fillWin {
+  display: block;
+  height: 100%;
+  background: $color-spice;
+  transition: width 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fillWin {
+  background: $color-moss;
+}

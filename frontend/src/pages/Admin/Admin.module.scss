@@ -1,0 +1,507 @@
+@use "@/styles/design" as *;
+
+// LOGIN
+.loginPage {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  background: $color-bg-soft;
+  padding: 4rem 1.5rem;
+}
+.card {
+  background: $color-bg;
+  border: 1px solid $color-border;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  h1 {
+    @include display-lg;
+    font-size: 2rem;
+    margin: 1rem 0 2rem;
+  }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  label { display: flex; flex-direction: column; gap: 0.4rem; }
+  label span {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $color-ink-muted;
+  }
+  input {
+    padding: 0.85rem 1rem;
+    border: 1px solid $color-border-strong;
+    background: $color-bg;
+    font-size: 0.95rem;
+    border-radius: $radius-sm;
+    font-family: $font-body;
+    color: $color-ink;
+    &:focus { outline: none; border-color: $color-spice; }
+  }
+  button[type="submit"] {
+    @include button-primary;
+    margin-top: 0.5rem;
+  }
+}
+.err {
+  background: rgba($color-spice, 0.08);
+  border: 1px solid $color-spice;
+  color: $color-spice;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+}
+
+// DASHBOARD
+.page {
+  @include container;
+  padding: 4rem 0 6rem;
+  min-height: 100vh;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  h1 {
+    @include display-lg;
+    margin: 0.5rem 0 0;
+  }
+}
+.muted { color: $color-ink-muted; font-size: 0.9rem; margin: 0.5rem 0 0; }
+.signOut {
+  background: none;
+  border: 1px solid $color-ink;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  &:hover { background: $color-ink; color: $color-bg; }
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 2.5rem;
+  button {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-family: $font-body;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $color-ink-muted;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    &:hover { color: $color-ink; }
+  }
+}
+.tabActive {
+  color: $color-spice !important;
+  border-bottom-color: $color-spice !important;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  h2 { font-family: $font-display; font-weight: 500; margin: 0; }
+}
+.add {
+  background: $color-spice;
+  color: $color-bg;
+  border: none;
+  padding: 0.7rem 1.25rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border-radius: $radius-sm;
+  &:hover { background: $color-spice-hover; }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1rem;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  img {
+    width: 60px; height: 60px; object-fit: cover;
+  }
+  button {
+    background: none;
+    border: 1px solid $color-border-strong;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    border-radius: $radius-sm;
+    &:hover { border-color: $color-ink; }
+  }
+}
+.rowNoImg {
+  grid-template-columns: 1fr auto auto auto;
+}
+
+.rowInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  strong {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  span {
+    font-size: 0.82rem;
+    color: $color-ink-muted;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.price { color: $color-spice; font-family: $font-display; font-size: 1.1rem; }
+.del {
+  color: $color-spice !important;
+  border-color: $color-spice !important;
+}
+
+// MODAL
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba($color-ink, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.modal {
+  background: $color-bg;
+  width: 100%;
+  max-width: 640px;
+  padding: 2rem;
+  border: 1px solid $color-border;
+  max-height: 90vh;
+  overflow-y: auto;
+  h3 {
+    font-family: $font-display;
+    font-size: 1.6rem;
+    margin: 0 0 1.5rem;
+  }
+}
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  span {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $color-ink-muted;
+  }
+  input, textarea {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid $color-border-strong;
+    background: $color-bg;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    border-radius: $radius-sm;
+    color: $color-ink;
+    resize: vertical;
+    &:focus { outline: none; border-color: $color-spice; }
+  }
+}
+/* ── Image upload ─────────────────────────────────────────── */
+.imageUploadArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.imagePreview {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border;
+}
+
+.imageUploadRow {
+  display: flex;
+  gap: 0.5rem;
+  input {
+    flex: 1;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid $color-border-strong;
+    background: $color-bg;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    border-radius: $radius-sm;
+    color: $color-ink;
+    &:focus { outline: none; border-color: $color-spice; }
+  }
+}
+
+.uploadBtn {
+  padding: 0.7rem 1rem;
+  border: 1px solid $color-spice;
+  background: color-mix(in srgb, $color-spice 10%, transparent);
+  color: $color-spice;
+  font-family: $font-body;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  &:hover:not(:disabled) { background: color-mix(in srgb, $color-spice 18%, transparent); }
+  &:disabled { opacity: 0.5; cursor: default; }
+}
+
+.uploadError {
+  font-size: 0.8rem;
+  color: #c0392b;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  button {
+    background: none;
+    border: 1px solid $color-border-strong;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    border-radius: $radius-sm;
+    font-size: 0.85rem;
+  }
+}
+.save {
+  background: $color-ink !important;
+  color: $color-bg !important;
+  border-color: $color-ink !important;
+  &:hover { background: $color-spice !important; border-color: $color-spice !important; }
+}
+
+// ── Customers admin ───────────────────────────────────────
+.backBtn {
+  background: none;
+  border: none;
+  padding: 0 0 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+  cursor: pointer;
+  display: block;
+  transition: color 200ms;
+  &:hover { color: $color-ink; }
+}
+
+.customerTableHead {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 100px) 90px 70px;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 0.25rem;
+
+  @media (max-width: 640px) { grid-template-columns: 1fr 90px 70px; }
+}
+
+.customerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.customerRow {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 100px) 90px 70px;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border: 1px solid $color-border;
+  background: $color-bg;
+  font-size: 0.875rem;
+
+  @media (max-width: 640px) { grid-template-columns: 1fr 90px 70px; }
+}
+
+.customerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+
+  strong { font-weight: 600; }
+}
+
+.hideSmall {
+  @media (max-width: 640px) { display: none; }
+}
+
+.customerStatus {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: $radius-sm;
+}
+
+.customerActive {
+  background: rgba(44, 74, 59, 0.1);
+  color: $color-moss;
+}
+
+.customerSuspended {
+  background: rgba(166, 64, 54, 0.1);
+  color: $color-spice;
+}
+
+.viewBtn {
+  background: none;
+  border: 1px solid $color-border-strong;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  color: $color-ink-muted;
+  white-space: nowrap;
+  transition: border-color 200ms, color 200ms;
+  &:hover { border-color: $color-spice; color: $color-spice; }
+}
+
+.customerDetailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 0.25rem;
+  }
+}
+
+.customerDetailMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.customerActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border-strong;
+  background: none;
+  color: $color-ink-muted;
+  transition: all 200ms;
+  &:hover { border-color: $color-ink; color: $color-ink; }
+}
+
+.actionBtnDanger {
+  border-color: $color-spice;
+  color: $color-spice;
+  &:hover { background: $color-spice; color: #fff; }
+}
+
+.actionBtnPrimary {
+  border-color: $color-moss;
+  color: $color-moss;
+  &:hover { background: $color-moss; color: #fff; }
+}
+
+.customerSection {
+  margin-bottom: 2rem;
+
+  h3 {
+    font-family: $font-display;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.customerOrderList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.customerOrderRow {
+  display: grid;
+  grid-template-columns: 130px 1fr 80px auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid $color-border;
+  font-size: 0.875rem;
+  background: $color-bg;
+
+  @media (max-width: 500px) { grid-template-columns: 1fr 80px auto; }
+}
+
+.customerCodeList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.customerCodeRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid $color-border;
+  font-size: 0.875rem;
+  background: $color-bg;
+}

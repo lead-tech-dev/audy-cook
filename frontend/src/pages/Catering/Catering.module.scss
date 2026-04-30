@@ -1,0 +1,125 @@
+@use "@/styles/design" as *;
+
+.page { background: $color-bg; }
+
+.head {
+  background: $color-moss;
+  color: $color-bg;
+  padding: 5rem 0;
+  position: relative;
+  .overline { color: $color-ochre; }
+}
+.headInner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  @media (min-width: $bp-lg) { grid-template-columns: 1.05fr 1fr; gap: 4rem; }
+}
+.title {
+  @include display-xl;
+  margin: 1rem 0 1.5rem;
+  color: $color-bg;
+  font-style: italic;
+}
+.sub {
+  font-size: 1.1rem;
+  color: rgba($color-bg, 0.78);
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 2.25rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: $color-ochre;
+  color: $color-ink;
+  padding: 1rem 1.75rem;
+  border: none;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  &:hover { background: lighten($color-ochre, 5%); }
+}
+.media {
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: $color-ink;
+  img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+.features {
+  @include container;
+  padding: 6rem 0 4rem;
+}
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  @media (min-width: $bp-md) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: $bp-lg) { grid-template-columns: repeat(4, 1fr); }
+}
+.feature {
+  border-top: 1px solid $color-border-strong;
+  padding-top: 1.5rem;
+  h3 {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1rem 0 0.5rem;
+    color: $color-ink;
+  }
+  p {
+    font-size: 0.95rem;
+    color: $color-ink-soft;
+    line-height: 1.55;
+    margin: 0;
+  }
+}
+.featNum {
+  font-family: $font-body;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: $color-spice;
+}
+
+.info {
+  background: $color-bg-soft;
+  padding: 5rem 0;
+}
+.infoInner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  @media (min-width: $bp-lg) { grid-template-columns: 1fr 1fr; }
+}
+.infoMedia {
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+  background: $color-bg-warm;
+  img { width: 100%; height: 100%; object-fit: cover; }
+}
+.infoText {
+  ul {
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    border-bottom: 1px solid $color-border;
+    padding: 1rem 0;
+    font-family: $font-display;
+    font-size: 1.2rem;
+    color: $color-ink;
+    font-style: italic;
+    &::before { content: "— "; color: $color-spice; font-style: normal; }
+  }
+}
+.btnDark { @include button-primary; }

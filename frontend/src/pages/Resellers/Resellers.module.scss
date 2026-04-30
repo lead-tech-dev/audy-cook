@@ -1,0 +1,136 @@
+@use "@/styles/design" as *;
+
+.page { background: $color-bg; }
+
+.head {
+  background: $color-bg-soft;
+  padding: 5rem 0 6rem;
+}
+.headInner {
+  @include container;
+  max-width: 880px;
+}
+.title {
+  @include display-xl;
+  margin: 1rem 0 1.5rem;
+  color: $color-ink;
+}
+.sub {
+  font-size: 1.1rem;
+  color: $color-ink-soft;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.list {
+  @include container;
+  padding: 4rem 0 6rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid $color-border;
+  padding-bottom: 1rem;
+}
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  padding: 0.7rem 1.2rem;
+  font-family: $font-body;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  color: $color-ink-soft;
+  transition: all 220ms ease;
+  &:hover { border-color: $color-border-strong; color: $color-ink; }
+}
+.tabActive {
+  background: $color-ink !important;
+  color: $color-bg !important;
+  border-color: $color-ink !important;
+  .count { background: $color-ochre; color: $color-ink; }
+}
+.flag { font-size: 1.2rem; }
+.count {
+  font-size: 0.7rem;
+  background: $color-bg-warm;
+  color: $color-ink;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.stores {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  @media (min-width: $bp-md) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: $bp-lg) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.store {
+  position: relative;
+  border: 1px solid $color-border;
+  padding: 1.5rem;
+  background: $color-bg;
+  transition: all 220ms ease;
+  &:hover {
+    border-color: $color-spice;
+    transform: translateY(-2px);
+  }
+  h3 {
+    font-family: $font-display;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+    color: $color-ink;
+  }
+}
+.storeMain {
+  border-color: $color-spice;
+  background: linear-gradient(135deg, $color-bg, $color-cream);
+}
+.mainTag {
+  position: absolute;
+  top: -12px;
+  left: 1.5rem;
+  background: $color-spice;
+  color: $color-bg;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.address {
+  color: $color-ink-soft;
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+.phone {
+  display: inline-block;
+  font-family: $font-display;
+  font-size: 1.05rem;
+  color: $color-spice;
+  font-weight: 500;
+  text-decoration: none;
+  &:hover { color: $color-spice-hover; }
+}
+
+.cta {
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  border-top: 1px solid $color-border;
+  padding-top: 4rem;
+}
+.btn { @include button-whatsapp; padding: 1rem 1.75rem; }
+.btnGhost { @include button-ghost; }

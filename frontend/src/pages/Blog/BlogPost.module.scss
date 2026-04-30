@@ -1,0 +1,233 @@
+@use "@/styles/design" as *;
+
+.page { background: $color-bg; padding-bottom: 5rem; }
+
+.loading, .notFound {
+  @include container;
+  padding: 6rem 0;
+  text-align: center;
+  color: $color-ink-muted;
+  h1 {
+    font-family: $font-display;
+    font-size: 5rem;
+    color: $color-spice;
+  }
+}
+
+.head {
+  padding: 4rem 0 2rem;
+  background: $color-bg-soft;
+  border-bottom: 1px solid $color-border;
+}
+.headInner {
+  @include container;
+  max-width: 880px;
+}
+.back {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: $color-ink-muted;
+  text-decoration: none;
+  &:hover { color: $color-spice; }
+}
+.cat {
+  display: inline-block;
+  margin: 1.5rem 0 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-spice;
+  font-weight: 700;
+}
+.title {
+  @include display-xl;
+  margin: 0 0 1.5rem;
+  color: $color-ink;
+  font-style: italic;
+  font-weight: 500;
+}
+.excerpt {
+  font-size: 1.2rem;
+  color: $color-ink-soft;
+  line-height: 1.6;
+  font-family: $font-display;
+  font-style: italic;
+  max-width: 660px;
+}
+.meta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+}
+
+.cover {
+  @include container;
+  margin-top: -3rem;
+  margin-bottom: 3rem;
+  max-width: 1100px;
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+.body {
+  @include container;
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: $color-ink-soft;
+
+  p { margin: 0 0 1.4rem; }
+  p:last-child { margin-bottom: 0; }
+
+  h1, h2, h3 {
+    font-family: $font-display;
+    color: $color-ink;
+    margin: 2rem 0 0.7rem;
+    line-height: 1.25;
+  }
+  h1 { font-size: 2rem; font-weight: 700; }
+  h2 { font-size: 1.55rem; font-weight: 700; }
+  h3 { font-size: 1.2rem; font-weight: 700; }
+
+  strong { font-weight: 700; color: $color-ink; }
+  em { font-style: italic; }
+  s { text-decoration: line-through; }
+  u { text-decoration: underline; }
+
+  mark { background: #fff176; padding: 0 3px; border-radius: 2px; }
+
+  a {
+    color: $color-spice;
+    text-decoration: underline;
+    &:hover { opacity: 0.75; }
+  }
+
+  code {
+    font-family: "Courier New", monospace;
+    font-size: 0.87em;
+    background: color-mix(in srgb, $color-spice 10%, transparent);
+    color: $color-spice;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  pre {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    padding: 1.2rem 1.4rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    code { background: none; color: inherit; padding: 0; border-radius: 0; }
+  }
+
+  blockquote {
+    border-left: 4px solid $color-spice;
+    margin: 1.8rem 0;
+    padding: 0.6rem 0 0.6rem 1.4rem;
+    font-style: italic;
+    color: $color-ink-soft;
+    p { margin: 0; }
+  }
+
+  ul, ol {
+    padding-left: 1.6rem;
+    margin: 1rem 0;
+  }
+  ul { list-style: disc; }
+  ol { list-style: decimal; }
+  li { margin: 0.3rem 0; }
+
+  hr {
+    border: none;
+    border-top: 2px solid $color-border;
+    margin: 2.5rem 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    display: block;
+  }
+
+  [style*="text-align: center"] { text-align: center; }
+  [style*="text-align: right"]  { text-align: right; }
+  [style*="text-align: justify"] { text-align: justify; }
+}
+
+/* ── Share bar ─────────────────────────────────────────────── */
+.share {
+  @include container;
+  max-width: 700px;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid $color-border;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shareLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $color-ink-muted;
+}
+
+.shareButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  border: none;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  color: #fff;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+}
+
+.shareFacebook  { background: #1877f2; }
+.shareTwitter   { background: #000; }
+.shareWhatsapp  { background: #25d366; }
+
+.shareCopy {
+  background: $color-ink-muted;
+  svg { stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+.shareCopied {
+  background: #2e7d32;
+  svg { stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+}

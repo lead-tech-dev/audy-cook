@@ -1,0 +1,239 @@
+@use "@/styles/design" as *;
+
+.page { background: $color-bg; padding-bottom: 6rem; }
+
+.state {
+  @include container;
+  padding: 6rem 0;
+  text-align: center;
+  color: $color-ink-muted;
+  h1 { font-family: $font-display; font-size: 5rem; color: $color-spice; }
+}
+
+.crumb {
+  @include container;
+  padding: 2rem 0 1rem;
+}
+.back {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: $color-ink-muted;
+  &:hover { color: $color-spice; }
+}
+
+.hero {
+  @include container;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  @media (min-width: $bp-lg) {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: $color-bg-warm;
+  img { width: 100%; height: 100%; object-fit: cover; }
+}
+.badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.45rem 0.85rem;
+}
+.bsell { background: $color-ochre; color: $color-ink; }
+.new { background: $color-moss; color: $color-bg; }
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.cat {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-spice;
+  font-weight: 700;
+}
+.title {
+  @include display-xl;
+  font-style: italic;
+  margin: 0;
+  color: $color-ink;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+.desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: $color-ink-soft;
+  font-family: $font-display;
+  font-style: italic;
+}
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-top: 1px solid $color-border;
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+.priceLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+}
+.priceVal {
+  font-family: $font-display;
+  font-size: 2.5rem;
+  color: $color-spice;
+  font-weight: 600;
+}
+
+.qtyRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.qtyLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+}
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $color-border-strong;
+  button {
+    width: 38px; height: 38px;
+    background: none; border: none;
+    cursor: pointer; color: $color-ink;
+    font-size: 1.05rem;
+    &:hover { background: $color-bg-warm; }
+  }
+  span { width: 44px; text-align: center; font-family: $font-display; font-size: 1.1rem; }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.addBtn { @include button-primary; flex: 1 1 auto; min-width: 200px; }
+.waBtn { @include button-whatsapp; }
+
+.bullets {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid $color-border;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.95rem;
+    color: $color-ink-soft;
+    span {
+      width: 22px; height: 22px;
+      display: grid; place-items: center;
+      background: $color-moss;
+      color: $color-bg;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+}
+
+// TESTIMONIALS
+.testimonials {
+  background: $color-bg-soft;
+  padding: 5rem 0 6rem;
+}
+.tInner {
+  @include container;
+  h2 {
+    @include display-lg;
+    font-style: italic;
+    margin: 0.75rem 0 2.5rem;
+  }
+}
+.tGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  @media (min-width: $bp-md) { grid-template-columns: repeat(3, 1fr); }
+}
+.t {
+  background: $color-bg;
+  border: 1px solid $color-border;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $color-border;
+    padding-top: 1rem;
+    margin-top: auto;
+    strong {
+      font-family: $font-display;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    span {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: $color-ink-muted;
+    }
+  }
+}
+.stars {
+  color: $color-ochre;
+  font-size: 1.05rem;
+  letter-spacing: 0.15em;
+}
+.tBody {
+  font-family: $font-display;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: $color-ink;
+  margin: 0;
+}
+
+// RELATED
+.related {
+  @include container;
+  padding: 5rem 0 0;
+  h2 {
+    @include display-lg;
+    font-style: italic;
+    margin: 0.75rem 0 2.5rem;
+  }
+}
+.relatedGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  @media (min-width: $bp-md) { grid-template-columns: repeat(3, 1fr); }
+}

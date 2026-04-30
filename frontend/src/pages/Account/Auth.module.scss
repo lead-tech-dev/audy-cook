@@ -1,0 +1,100 @@
+@use "@/styles/design" as *;
+
+.page {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  background: $color-bg-soft;
+  padding: 4rem 1.5rem;
+}
+
+.card {
+  background: $color-bg;
+  border: 1px solid $color-border;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 460px;
+
+  .overline {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-spice;
+    font-weight: 600;
+  }
+
+  h1 {
+    @include display-lg;
+    font-size: 2rem;
+    margin: 0.75rem 0 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  span {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $color-ink-muted;
+  }
+
+  input {
+    padding: 0.85rem 1rem;
+    border: 1px solid $color-border-strong;
+    background: $color-bg;
+    font-size: 0.95rem;
+    border-radius: $radius-sm;
+    font-family: $font-body;
+    color: $color-ink;
+
+    &:focus {
+      outline: none;
+      border-color: $color-spice;
+    }
+  }
+}
+
+.submit {
+  @include button-primary;
+  margin-top: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.err {
+  background: rgba($color-spice, 0.08);
+  border: 1px solid $color-spice;
+  color: $color-spice;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  border-radius: $radius-sm;
+}
+
+.footer {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $color-border;
+  text-align: center;
+  font-size: 0.875rem;
+  color: $color-ink-muted;
+
+  a {
+    color: $color-spice;
+    font-weight: 600;
+    margin-left: 0.35rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
