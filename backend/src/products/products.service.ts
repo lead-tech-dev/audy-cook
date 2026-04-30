@@ -84,6 +84,7 @@ export class ProductsService {
   }
 
   async seedIfMissing(items: any[]) {
+    let created = 0;
     for (const item of items) {
       const existing = await this.repo.findOne({ where: { slug: item.slug } });
       if (!existing) {
@@ -102,7 +103,9 @@ export class ProductsService {
           in_stock: item.in_stock ?? true,
           sort_order: item.sort_order ?? 0,
         }));
+        created += 1;
       }
     }
+    return created;
   }
 }

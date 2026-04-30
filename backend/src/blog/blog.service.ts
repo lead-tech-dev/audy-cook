@@ -77,6 +77,7 @@ export class BlogService {
   }
 
   async seedIfMissing(items: any[]) {
+    let created = 0;
     for (const item of items) {
       const existing = await this.repo.findOne({ where: { slug: item.slug } });
       if (!existing) {
@@ -95,7 +96,9 @@ export class BlogService {
           read_time: item.read_time ?? 5,
           published_at: new Date(),
         }));
+        created += 1;
       }
     }
+    return created;
   }
 }

@@ -63,6 +63,7 @@ export class MenuService {
   }
 
   async seedIfMissing(items: any[]) {
+    let created = 0;
     for (const item of items) {
       const existing = await this.repo.findOne({ where: { name_fr: item.name?.fr } });
       if (!existing) {
@@ -77,7 +78,9 @@ export class MenuService {
           image: item.image ?? null,
           sort_order: item.sort_order ?? 0,
         }));
+        created += 1;
       }
     }
+    return created;
   }
 }

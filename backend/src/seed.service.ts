@@ -178,10 +178,12 @@ export class SeedService {
   ) {}
 
   async run() {
-    await this.products.seedIfMissing(SEED_PRODUCTS);
-    await this.menu.seedIfMissing(SEED_MENU);
-    await this.blog.seedIfMissing(SEED_BLOG);
+    const products = await this.products.seedIfMissing(SEED_PRODUCTS);
+    const menu = await this.menu.seedIfMissing(SEED_MENU);
+    const blog = await this.blog.seedIfMissing(SEED_BLOG);
+    const summary = { products, menu, blog };
     // eslint-disable-next-line no-console
-    console.log('[seed] Done.');
+    console.log('[seed] Done.', summary);
+    return summary;
   }
 }

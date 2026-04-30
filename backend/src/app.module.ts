@@ -15,6 +15,7 @@ import { AccountModule } from './account/account.module';
 import { CustomersAdminModule } from './customers-admin/customers-admin.module';
 import { UploadModule } from './upload/upload.module';
 import { HealthModule } from './health/health.module';
+import { SeedController } from './seed.controller';
 import { SeedService } from './seed.service';
 
 import { AdminUser } from './auth/admin-user.entity';
@@ -55,6 +56,7 @@ import { CustomerAddress } from './account/customer-address.entity';
     UploadModule,
     HealthModule,
   ],
+  controllers: [SeedController],
   providers: [SeedService],
 })
 export class AppModule implements OnModuleInit {
