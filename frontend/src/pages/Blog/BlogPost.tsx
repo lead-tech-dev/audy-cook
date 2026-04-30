@@ -49,12 +49,9 @@ export default function BlogPost() {
   }
 
   const rawUrl = window.location.href;
-  // Point share links to the backend OG endpoint so crawlers (Facebook, WhatsApp…)
-  // receive proper og:image / og:title / og:description even on static hosting.
-  // Humans clicking the shared link are immediately redirected to the React page.
-  const backendUrl = (process.env.REACT_APP_BACKEND_URL || "").replace(/\/$/, "");
-  const ogEndpoint = `${backendUrl}/api/share/blog/${post.slug}`;
-  const pageUrl = encodeURIComponent(ogEndpoint);
+  // Cloudflare Pages Function at /blog/:slug detects bots and injects OG tags.
+  // Share links point directly to the article URL — no backend indirection needed.
+  const pageUrl = encodeURIComponent(rawUrl);
   const pageTitle = encodeURIComponent(post.title[lang]);
 
   function handleCopy() {
