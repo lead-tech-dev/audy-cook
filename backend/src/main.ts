@@ -8,6 +8,10 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, { cors: true });
+  const corsOrigins = (process.env.CORS_ORIGINS || '*')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean);
 
   const uploadDir = join(process.cwd(), 'uploads');
   if (!existsSync(uploadDir)) mkdirSync(uploadDir, { recursive: true });
@@ -16,7 +20,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
   app.enableCors({
-    origin: (process.env.CORS_ORIGINS || '*').split(','),
+    origin: corsOrigins.includes('*') ? true : corsOrigins,
     credentials: true,
   });
   const port = parseInt(process.env.PORT || '8001', 10);
